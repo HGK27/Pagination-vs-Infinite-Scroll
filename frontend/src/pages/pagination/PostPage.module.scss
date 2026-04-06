@@ -1,0 +1,18 @@
+@use "../../scss/abstract/token" as t;
+@use "../../scss/abstract/mixins" as m;
+
+.page {
+    background-color: t.$color-bg;
+    min-height: 100vh;
+    padding: t.$space-md 0;
+}
+
+.pageTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.container {
+    @include m.container;
+}

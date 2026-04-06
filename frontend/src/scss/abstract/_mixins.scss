@@ -1,0 +1,20 @@
+@use "../abstract/token" as t;
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin container {
+    max-width: t.$container-max-width;
+    margin: 0 auto;
+    padding: 0 t.$container-padding;
+}
+
+// Responsive için basit bir breakpoint mixin
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}

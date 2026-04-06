@@ -1,0 +1,38 @@
+@use "../../scss/abstract/token" as t;
+@use "../../scss/abstract/mixins" as m;
+
+.page {
+    background-color: t.$color-bg;
+    min-height: 100vh;
+    padding: t.$space-md 0;
+}
+
+.container {
+    @include m.container;
+}
+
+.list {
+
+    // react-window List bileşenine width override
+    &>div {
+        @include m.container;
+    }
+}
+
+.pageTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.listStyle {
+    display: flex;
+    flex-direction: column;
+
+    scrollbar-width: none; // Firefox
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome, Safari
+    }
+
+}

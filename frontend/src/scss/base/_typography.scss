@@ -1,0 +1,24 @@
+@use "../abstract/token" as t;
+
+body {
+    font-family: t.$font-main;
+    background-color: t.$color-bg;
+    color: t.$color-text-main;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: t.$weight-semibold;
+    color: t.$color-text-main;
+}
+
+a {
+    text-decoration: none;
+    color: t.$color-primary;
+}

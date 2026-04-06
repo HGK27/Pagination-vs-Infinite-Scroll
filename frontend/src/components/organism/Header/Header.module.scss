@@ -1,0 +1,38 @@
+@use "../../../scss/abstract/token" as t;
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: t.$color-surface;
+    padding: 0 2rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.link {
+    color: t.$color-text-muted;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.2s;
+
+    &:hover {
+        color: t.$color-text-main;
+    }
+}
+
+.active {
+    color: t.$color-text-main;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid t.$color-primary;
+    padding-bottom: 2px;
+}

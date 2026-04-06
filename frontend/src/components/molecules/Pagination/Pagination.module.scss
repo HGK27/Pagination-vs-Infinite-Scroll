@@ -1,0 +1,66 @@
+@use "../../../scss/abstract/token" as t;
+@use "../../../scss/abstract/mixins" as m;
+
+
+.paginationContainer {
+    @include m.flex-center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem 0;
+}
+
+.pageList {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+
+    @include m.mobile {
+        // Mobilde çok fazla sayı varsa gizlemek için basit bir çözüm
+        display: none;
+    }
+}
+
+.navButton,
+.pageButton {
+    background-color: t.$color-surface;
+    color: t.$color-text-main;
+    border: 1px solid rgba(t.$color-text-muted, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: t.$radius-md;
+    font-family: t.$font-main;
+    font-weight: t.$weight-medium;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+        background-color: t.$color-primary;
+        color: t.$color-bg;
+        border-color: t.$color-primary;
+        transform: translateY(-2px);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+}
+
+.pageButton {
+    min-width: 42px;
+    @include m.flex-center;
+
+    &.active {
+        background-color: t.$color-primary;
+        color: t.$color-bg;
+        border-color: t.$color-primary;
+        font-weight: t.$weight-semibold;
+        box-shadow: 0 0 15px rgba(t.$color-primary, 0.3);
+    }
+}
+
+.ellipsis {
+    color: t.$color-text-muted;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 12px;
+    font-weight: t.$weight-semibold;
+}
